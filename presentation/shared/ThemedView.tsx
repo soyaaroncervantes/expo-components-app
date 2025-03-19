@@ -1,4 +1,4 @@
-import {Text, View, ViewProps} from 'react-native'
+import {View, ViewProps} from 'react-native'
 import {useThemeColor} from "@/hooks/useThemeColor";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 
@@ -18,13 +18,13 @@ const ThemedView = ({className, style, margin = false, safe = false, colors, chi
       className={`bg-light-background dark:bg-dark-background ${className}`}
       style={[
         {
-        backgroundColor,
-        flex: 1,
-        paddingTop: safe ? safeArea.top : 0,
-        marginHorizontal: margin ? 10 : 0,
+          backgroundColor,
+          flex: 1,
+          paddingTop: safe ? safeArea.top : 0,
+          marginHorizontal: margin ? 10 : 0,
         },
         style
-        ]}>
+      ]}>
       {children}
     </View>
   )

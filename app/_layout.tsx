@@ -1,14 +1,14 @@
 import {useEffect} from 'react';
 import {DarkTheme, DefaultTheme, ThemeProvider} from "@react-navigation/native";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
-import {Text, useColorScheme} from "react-native";
+import {useColorScheme} from "react-native";
 import {useFonts} from 'expo-font';
-import 'react-native-reanimated';
 import * as SplashScreen from 'expo-splash-screen';
-import './global.css';
 import {useThemeColor} from "@/hooks/useThemeColor";
 import ThemedView from "@/presentation/shared/ThemedView";
 import ThemedText from "@/presentation/shared/ThemedText";
+import 'react-native-reanimated';
+import './global.css';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
