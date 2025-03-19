@@ -9,6 +9,8 @@ import ThemedView from "@/presentation/shared/ThemedView";
 import ThemedText from "@/presentation/shared/ThemedText";
 import 'react-native-reanimated';
 import './global.css';
+import {Stack} from "expo-router";
+import {AppRoutes} from "@/constants/Routes";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -36,13 +38,22 @@ export default function RootLayout() {
       flex: 1
     }}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <ThemedView margin safe>
-          <ThemedText type='display'>Hello World</ThemedText>
-          <ThemedText type="headline">Hello World</ThemedText>
-          <ThemedText type="title">Hello World</ThemedText>
-          <ThemedText type="body">Hello World</ThemedText>
-          <ThemedText type="label">Hello World</ThemedText>
-        </ThemedView>
+        <Stack screenOptions={{
+          headerShadowVisible: false,
+          contentStyle: { backgroundColor },
+          headerStyle: { backgroundColor },
+        }}>
+          <Stack.Screen
+            name='index'
+            options={{
+              title: 'Inicio',
+              headerShown: false,
+            }} />
+
+          { AppRoutes.map(({name, title}) => (
+            <Stack.Screen key={name} name={name} options={{title: title}} />
+          ))}
+        </Stack>
       </ThemeProvider>
     </GestureHandlerRootView>
   );

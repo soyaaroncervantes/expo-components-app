@@ -15,13 +15,13 @@ const ThemedView = ({className, style, margin = false, safe = false, colors, chi
   const safeArea = useSafeAreaInsets();
   return (
     <View
-      className={`bg-light-background dark:bg-dark-background ${className}`}
+      className={['bg-light-background dark:bg-dark-background', className].join(' ')}
       style={[
         {
           backgroundColor,
           flex: 1,
           paddingTop: safe ? safeArea.top : 0,
-          marginHorizontal: margin ? 10 : 0,
+          margin: margin ? 10 : 0,
         },
         style
       ]}>
