@@ -1,19 +1,23 @@
 import ThemeView from "@/presentation/theme/View";
-import {Switch, View} from "react-native";
 import {useReducer} from "react";
-import ThemeText from "@/presentation/theme/Text";
-
+import ThemeSwitch from "@/presentation/theme/Switch";
 
 const Switches = () => {
-  const [isEnabled, toggle] = useReducer(s => !s, true);
+  const [isHungry, toggleHungry] = useReducer(s => !s, false);
+  const [isAlive, toggleAlive] = useReducer(s => !s, true);
+  const [isHappy, toggleHappy] = useReducer(s => !s, false);
+
   return (
-    <ThemeView margin fullScreen className="my-2">
-      <View className='flex-row items-center gap-4d'>
-        <ThemeText type='label'>Enabled something</ThemeText>
-        <Switch
-          value={isEnabled}
-          onValueChange={toggle}/>
-      </View>
+    <ThemeView margin fullScreen className="my-2 gap-4">
+      <ThemeSwitch isEnabled={isHungry} toggle={toggleHungry}>
+        Hambriento
+      </ThemeSwitch>
+      <ThemeSwitch isEnabled={isAlive} toggle={toggleAlive}>
+        Sobreviviendo
+      </ThemeSwitch>
+      <ThemeSwitch isEnabled={isHappy} toggle={toggleHappy}>
+        Contento
+      </ThemeSwitch>
     </ThemeView>
   );
 };
