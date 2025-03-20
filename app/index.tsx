@@ -5,7 +5,7 @@ import ThemeView from "@/presentation/theme/View";
 
 const ComponentsApp = () => {
   return (
-    <ThemeView safe margin className="p-4 gap-8">
+    <ThemeView safe margin fullScreen className="p-4 gap-8">
       <ThemeText type='display'>Components App</ThemeText>
       <ThemeMenu routes={animationMenuRoutes}/>
       <ThemeMenu routes={uiMenuRoutes}/>

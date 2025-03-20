@@ -1,7 +1,7 @@
-import {View} from 'react-native'
 import {AppRoute} from "@/constants/Routes";
 import ThemeText from "@/presentation/theme/Text";
 import ThemeLink from "@/presentation/theme/Link";
+import ThemeView from "./View";
 
 interface Props {
   routes: AppRoute[];
@@ -9,7 +9,7 @@ interface Props {
 
 const ThemeMenu = ({routes}: Props) => {
   return (
-    <View className="gap-2">
+    <ThemeView className="gap-2">
       {
         routes.map((route, index) => (
           <ThemeLink
@@ -23,7 +23,7 @@ const ThemeMenu = ({routes}: Props) => {
           </ThemeLink>
         ))
       }
-    </View>
+    </ThemeView>
   )
 }
 export default ThemeMenu

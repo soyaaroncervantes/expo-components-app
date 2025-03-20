@@ -32,10 +32,7 @@ export default function RootLayout() {
   }
 
   return (
-    <GestureHandlerRootView style={{
-      backgroundColor,
-      flex: 1
-    }}>
+    <GestureHandlerRootView>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack screenOptions={{
           headerShadowVisible: false,
