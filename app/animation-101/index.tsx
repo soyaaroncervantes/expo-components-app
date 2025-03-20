@@ -1,6 +1,6 @@
+import {useRef} from "react";
 import {Animated, View} from 'react-native';
 import ThemeButton from "@/presentation/theme/Button";
-import {useRef} from "react";
 import ThemeView from "@/presentation/theme/View";
 
 const Animation101Screen = () => {
