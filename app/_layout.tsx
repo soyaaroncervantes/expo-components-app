@@ -6,7 +6,7 @@ import {useFonts} from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import {useThemeColor} from "@/hooks/useThemeColor";
 import ThemedView from "@/presentation/shared/ThemedView";
-import ThemedText from "@/presentation/shared/ThemedText";
+import Text from "@/presentation/theme/Text";
 import 'react-native-reanimated';
 import './global.css';
 import {Stack} from "expo-router";

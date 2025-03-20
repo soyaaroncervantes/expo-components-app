@@ -11,7 +11,7 @@ interface Props extends ViewProps {
   isLast?: boolean;
 }
 
-const ThemedLink = ({
+const ThemeLink = ({
                       route,
                       bordered,
                       color = 'base',
@@ -30,8 +30,8 @@ const ThemedLink = ({
             'py-3 px-4 rounded-xl',
             color === 'base' && 'border-purple-50',
             color === 'primary' && 'bg-purple-100 dark:bg-purple-950 border-purple-400',
-            isFirst && '!bg-green-100 !dark:bg-green-900',
-            isLast && '!bg-emerald-100 !dark:bg-emerald-900',
+            isFirst && 'bg-green-100 dark:bg-green-900',
+            isLast && 'bg-emerald-100 dark:bg-emerald-900',
             bordered && 'border',
             className
           ].join(' ')
@@ -45,4 +45,4 @@ const ThemedLink = ({
     </View>
   )
 }
-export default ThemedLink
+export default ThemeLink

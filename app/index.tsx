@@ -1,16 +1,16 @@
 import {animationMenuRoutes, menuRoutes, uiMenuRoutes} from "@/constants/Routes";
-import ThemedView from "@/presentation/shared/ThemedView";
-import ThemedText from "@/presentation/shared/ThemedText";
-import ThemedMenu from "@/presentation/shared/ThemedMenu";
+import ThemeText from "@/presentation/theme/Text";
+import ThemeMenu from "@/presentation/theme/Menu";
+import ThemeView from "@/presentation/theme/View";
 
 const ComponentsApp = () => {
   return (
-    <ThemedView safe margin className="p-4 gap-8">
-      <ThemedText type='display'>Components App</ThemedText>
-      <ThemedMenu routes={animationMenuRoutes}/>
-      <ThemedMenu routes={uiMenuRoutes}/>
-      <ThemedMenu routes={menuRoutes}/>
-    </ThemedView>
+    <ThemeView safe margin className="p-4 gap-8">
+      <ThemeText type='display'>Components App</ThemeText>
+      <ThemeMenu routes={animationMenuRoutes}/>
+      <ThemeMenu routes={uiMenuRoutes}/>
+      <ThemeMenu routes={menuRoutes}/>
+    </ThemeView>
   );
 };
 export default ComponentsApp;

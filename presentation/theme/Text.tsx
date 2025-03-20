@@ -6,7 +6,7 @@ interface Props extends TextProps {
   type: TextType;
 }
 
-const ThemedText = ({type, className, children, ...rest}: Props) => {
+const ThemeText = ({type, className, children, ...rest}: Props) => {
   return (
     <Text
       className={[
@@ -22,4 +22,4 @@ const ThemedText = ({type, className, children, ...rest}: Props) => {
     </Text>
   )
 }
-export default ThemedText
+export default ThemeText
