@@ -1,9 +1,6 @@
-import {Pressable, PressableProps, Switch, SwitchProps, useColorScheme, View, ViewProps} from 'react-native'
+import {Pressable, PressableProps, Switch, SwitchProps} from 'react-native'
 import ThemeText from "@/presentation/theme/Text";
 import TwColors from "tailwindcss/colors";
-import {useTheme} from "@react-navigation/core";
-import {useThemeColor} from "@/hooks/useThemeColor";
-import {useRef} from "react";
 
 interface Props extends SwitchProps {
   isEnabled: boolean;
