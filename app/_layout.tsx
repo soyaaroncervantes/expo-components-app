@@ -1,16 +1,15 @@
 import {useEffect} from 'react';
-import {DarkTheme, DefaultTheme, ThemeProvider} from "@react-navigation/native";
-import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {useColorScheme} from "react-native";
-import {useFonts} from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-import {useThemeColor} from "@/hooks/useThemeColor";
-import ThemedView from "@/presentation/shared/ThemedView";
-import Text from "@/presentation/theme/Text";
-import 'react-native-reanimated';
-import './global.css';
 import {Stack} from "expo-router";
+import {useFonts} from 'expo-font';
+import {DarkTheme, DefaultTheme, ThemeProvider} from "@react-navigation/native";
+import * as SplashScreen from 'expo-splash-screen';
+import {GestureHandlerRootView} from "react-native-gesture-handler";
+import 'react-native-reanimated';
+import 'react-native-gesture-handler';
+import {useThemeColor} from "@/hooks/useThemeColor";
 import {AppRoutes} from "@/constants/Routes";
+import './global.css';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -40,18 +39,18 @@ export default function RootLayout() {
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack screenOptions={{
           headerShadowVisible: false,
-          contentStyle: { backgroundColor },
-          headerStyle: { backgroundColor },
+          contentStyle: {backgroundColor},
+          headerStyle: {backgroundColor},
         }}>
           <Stack.Screen
             name='index'
             options={{
               title: 'Inicio',
               headerShown: false,
-            }} />
+            }}/>
 
-          { AppRoutes.map(({name, title}) => (
-            <Stack.Screen key={name} name={name} options={{title: title}} />
+          {AppRoutes.map(({name, title}) => (
+            <Stack.Screen key={name} name={name} options={{title: title}}/>
           ))}
         </Stack>
       </ThemeProvider>
