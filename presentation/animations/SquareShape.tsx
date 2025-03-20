@@ -1,24 +1,18 @@
-import { View } from "moti"
+import {Animated} from "react-native";
 
-const SquareShape = () => {
+interface SquareShapeProps {
+  opacity: Animated.Value;
+  translateY: Animated.Value;
+}
+
+const SquareShape = ({opacity, translateY}: SquareShapeProps) => {
   return (
-    <View
-      className="bg-green-300 h-32 w-32 rounded-xl"
-      from={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-      }}
-      transition={{
-        type: 'timing',
-        duration: 300
-      }}>
-
-    </View>
+    <Animated.View
+      className="bg-green-300 h-32 w-32 rounded-xl aspect-square"
+      style={{
+        opacity,
+        transform: [{translateY}]
+      }} />
   )
 }
 export default SquareShape
