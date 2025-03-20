@@ -15,8 +15,8 @@ const ThemeLink = ({
                       route,
                       bordered,
                       color = 'base',
-                      isFirst,
-                      isLast,
+                      isFirst = false,
+                      isLast = false,
                       children,
                       className
                     }: Props) => {
@@ -29,10 +29,11 @@ const ThemeLink = ({
           [
             'py-3 px-4 rounded-xl',
             color === 'base' && 'border-purple-50',
-            color === 'primary' && 'bg-purple-100 dark:bg-purple-950 border-purple-400',
+            !(isFirst || isLast) && color === 'primary' && 'bg-purple-100 dark:bg-purple-950',
             isFirst && 'bg-green-100 dark:bg-green-900',
             isLast && 'bg-emerald-100 dark:bg-emerald-900',
             bordered && 'border',
+            bordered && color === 'primary' && 'border-purple-400',
             className
           ].join(' ')
         }
