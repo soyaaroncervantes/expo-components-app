@@ -1,9 +1,9 @@
-import ThemeView from "@/presentation/theme/View";
 import {useState} from "react";
+import {KeyboardAvoidingView, Platform, ScrollView} from "react-native";
+import ThemeView from "@/presentation/theme/View";
 import ThemeCard from "@/presentation/theme/Card";
 import ThemeText from "@/presentation/theme/Text";
 import ThemeTextInput from "@/presentation/theme/Input";
-import {KeyboardAvoidingView, Platform, ScrollView} from "react-native";
 
 const isIOS = Platform.OS === 'ios';
 
@@ -15,8 +15,9 @@ const TextInputsScreen = () => {
   });
 
   return (
-    <KeyboardAvoidingView behavior={isIOS ? 'height' : undefined}>
-      <ScrollView>
+    <KeyboardAvoidingView behavior={isIOS ? 'padding' : undefined}>
+      <ScrollView
+        automaticallyAdjustKeyboardInsets={true}>
         <ThemeView margin fullScreen className="gap-4">
           <ThemeCard compact={true} shadow className='gap- 2'>
             <ThemeTextInput
@@ -24,7 +25,6 @@ const TextInputsScreen = () => {
               autoCapitalize='words'
               autoCorrect={false}
               onChangeText={text => setForm({...form, name: text})} value={form.name}/>
-
             <ThemeTextInput
               placeholder="Correo electrónico"
               autoCorrect={false}
