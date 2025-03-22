@@ -1,6 +1,7 @@
-import {View, ViewProps} from 'react-native'
+import {useColorScheme, View, ViewProps} from 'react-native'
 import {useThemeColor} from "@/hooks/useThemeColor";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
+import TwColors from "tailwindcss/colors";
 
 interface Props extends ViewProps {
   margin?: boolean;
@@ -12,7 +13,9 @@ interface Props extends ViewProps {
 }
 
 const ThemeView = ({className, style, margin = false, safe = false, fullScreen = false, colors, children}: Props) => {
-  const backgroundColor = colors?.background ?? useThemeColor({}, 'background');
+  const colorScheme = useColorScheme();
+  const bgColor = colorScheme === 'dark' ? TwColors.neutral[900] : TwColors.neutral[100];
+  const backgroundColor = colors?.background ?? bgColor;
   const safeArea = useSafeAreaInsets();
   return (
     <View

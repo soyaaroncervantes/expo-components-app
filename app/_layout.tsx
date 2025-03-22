@@ -10,13 +10,14 @@ import 'react-native-gesture-handler';
 import {useThemeColor} from "@/hooks/useThemeColor";
 import {AppRoutes} from "@/constants/Routes";
 import './global.css';
+import colors from "tailwindcss/colors";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  const backgroundColor = useThemeColor({}, 'background')
+  const backgroundColor = colorScheme === 'dark' ? colors.neutral[900] : colors.neutral[100];
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });

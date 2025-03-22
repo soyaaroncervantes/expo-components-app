@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const {Colors} = require("./constants/Colors");
+const colors = require("tailwindcss/colors");
 module.exports = {
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
@@ -15,7 +16,7 @@ module.exports = {
           tertiary: Colors.light.tertiary,
           success: Colors.light.success,
           text: Colors.light.text,
-          background: Colors.light.background,
+          background: colors.neutral[100],
         },
         dark: {
           primary: Colors.dark.primary,
@@ -23,7 +24,7 @@ module.exports = {
           tertiary: Colors.dark.tertiary,
           success: Colors.dark.success,
           text: Colors.dark.text,
-          background: Colors.dark.background,
+          background: colors.neutral[900],
         }
       }
     },
