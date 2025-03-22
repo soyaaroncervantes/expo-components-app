@@ -15,7 +15,7 @@ const ThemeText = ({type, className, children, ...rest}: Props) => {
         type === 'headline' && 'text-2xl font-medium',
         type === 'title' && 'text-xl font-medium',
         type === 'body' && 'text-base',
-        type === 'label' && 'text-sm font-bold',
+        type === 'label' && 'text-sm',
         className
       ].join(' ')} {...rest}>
       {children}
